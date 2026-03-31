@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.K. Plumbers & Key Cutting - Your Trusted Local Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === COLOR VARIABLES === */
+        :root {
+            --navy: #c94909;
+            --silver: #0c0c0ca1;
+            --light-gray: #e0e3e0;
+            --dark-text: #b94d0a;
+            --white: #070707b6;
+        }
+
+        /* === BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(rgba(141, 3, 3, 0.921));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* === BUTTONS === */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--silver);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background-color: #a8a8a8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--silver);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--navy);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(rgba(23, 8, 13, 0.654), rgba(1, 58, 59, 0.654)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color:rgba(76, 119, 138, 0.889);
+            padding: 150px 0 100px;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* === SERVICES SECTION === */
+        .services {
+            background-color:rgba(76, 119, 138, 0.889);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+    
+
+        .service-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content:none;
+            color: var(--navy);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* === WHY CHOOSE US SECTION === */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+             background-color: rgba(76, 119, 138, 0.889);
+        }
+
+        .why-us{
+            background-color:  background-color: rgba(76, 119, 138, 0.889);
+        }
+
+        .feature {
+        
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            margin-bottom: 10px;
+        }
+
+        /* === TESTIMONIALS SECTION === */
+        .testimonials {
+            background-color:rgba(76, 119, 138, 0.889);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(rgba(9, 9, 9, 0.865));
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text:before {
+            content: """;
+            font-size: 3rem;
+            color: var(--silver);
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact{
+            background-color: rgba(76, 119, 138, 0.889);;
+        }
+
+        .contact-item{
+            background-color: rgba(157, 184, 193, 0.889);
+        }   
+
+        .phone-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 20px 0;
+            display: block;
+            text-decoration: none;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--navy);
+            font-size: 1.2rem;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: rgba(13, 13, 14, 0.889);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-logo span {
+            color: var(--silver);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* === RESPONSIVE STYLES === */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .services-grid,
+            .features,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .phone-number {
+                font-size: 1.8rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">J.K. <span>Plumbers & Key Cutting</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Your Trusted Local Plumber & Locksmith</h1>
+                <p>Fast, Reliable & Affordable. For Emergencies & Everyday Needs.</p>
+                <div class="hero-buttons">
+                    <a href="tel:0796777202" class="btn btn-primary">Call Now: 254796777202</a>
+                    <a href="#contact" class="btn btn-secondary">Wanna get a Free Quote</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for plumber image -->
+                <div style="width:100%; height:300px; background-color:var(--silver); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--navy);">
+                    <i class="fas fa-tools" style="font-size: 4rem;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3>Plumbing Services</h3>
+                    <ul class="service-list">
+                        <li>Leaky Faucet & Pipe Repair</li>
+                        <li>Drain Cleaning & Unclogging</li>
+                        <li>Water Heater Installation & Repair</li>
+                        <li>Emergency 24/7 Service</li>
+                        <li>Toilet Repair & Installation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Key Cutting Services</h3>
+                    <ul class="service-list">
+                        <li>House Keys & Master Keys</li>
+                        <li>Car Key Duplication</li>
+                        <li>Basic Lock Repair & Rekeying</li>
+                        <li>Safe & Cabinet Keys</li>
+                        <li>Transponder Key Programming</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <h2>Why Your Neighbors Trust J.K.</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Family-Owned & Operated</h3>
+                        <p>We're your neighbors,way out of the corporate chain. We take pride in serving our community.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Upfront Pricing</h3>
+                        <p>No hidden fees or surprise charges. We provide honest quotes before we start any work.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Professional Technicians</h3>
+                        <p>Our friendly, skilled technicians arrive on time and treat your home with respect.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Fast, Same-Day Service</h3>
+                        <p>We understand emergencies happen. We offer same-day service for urgent needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "J.K are just the best rnow...wamefix tank yangu ata before nianze jaba"
+                    </div>
+                    <div class="testimonial-author">Bennito</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Not only are they my go-to plumbers, but they also cut a precise copy of my modern car key. A true one-stop-shop!"
+                    </div>
+                    <div class="testimonial-author">- Tyson.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I've used JK mainly for plumbing issues. Always reliable, friendly, and the prices are fair.Imma try key cutting up next"
+                    </div>
+                    <div class="testimonial-author">- Mariah T.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us Today</h2>
+            <div class="contact-info">
+                <a href="Logistics.html"
+                target="_blank"
+                 class="phone-number">(254)796777202</a>
+                <p>Ready to help with your plumbing or key needs. Call for emergency service!</p>
+                <a href="https://youtu.be/7u_cm5b1s7Y?si=THV9jBN4d0sqL2dm" 
+                target="blank">open shop</a>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@lcmtbm08@outlook.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>047 Main Street, Your Hood,Nairobi</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Sun-Mon: 24/7 Professional Servicing</span>
+                    </div>
+                </div>
+                
+                <p 
+                style="margin-top: 30px; font-style: italic;">Serving Eastleigh and all surrounding areas.</p>
+                
+                <a href="254796777202" 
+                class="btn btn-primary"
+                 style="margin-top: 20px;">Call for Emergency Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">J.K. <span>Plumbers & Key Cutting</span></div>
+                <div>Your Trusted Local Experts Since 2005</div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 J.K. Plumbers & Key Cutting. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.backgroundColor = 'var(--white)';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
